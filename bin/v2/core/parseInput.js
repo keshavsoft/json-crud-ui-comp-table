@@ -4,6 +4,7 @@ export default function parseInput({ inTableName, inShowLog, inToPath }) {
     return {
         tableName: inTableName || tableName,
         showLog: inShowLog || showLog,
-        toPath: inToPath || process.cwd()
+        toPath: inToPath || process.cwd(),
+        configPath: path.join(process.cwd(), "Config", "Schemas")
     };
 };
