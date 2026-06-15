@@ -20,7 +20,7 @@ const run = async ({ tableName, showLog, toPath, configPath }) => {
     tableName: input.tableName,
     showLog: input.showLog,
     toPath: input.toPath,
-    configPath
+    configPath: input.configPath
   });
 };
 

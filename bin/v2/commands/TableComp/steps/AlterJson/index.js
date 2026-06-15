@@ -32,7 +32,10 @@ const getShowAllConfigPath = ({ inDestination }) => {
     );
 };
 
-const startFunc = ({ inDestination, inToPath, tableName, fromConfigPath, showLog = false }) => {
+const startFunc = ({ inDestination, tableName, fromConfigPath, showLog = false }) => {
+    console.log("aaaaaa : ", inDestination, tableName, fromConfigPath, showLog);
+
+
     const columnsConfig = getSchemaConfig({ fromConfigPath, tableName, showLog });
 
     const configRoot = getShowAllConfigPath({ inDestination });
