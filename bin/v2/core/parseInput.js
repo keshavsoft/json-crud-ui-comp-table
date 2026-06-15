@@ -1,9 +1,9 @@
-export default function parseInput() {
-    const [cmd, showLog] = process.argv.slice(2);
+export default function parseInput({ inTableName, inShowLog, inToPath }) {
+    const [tableName, showLog] = process.argv.slice(2);
 
     return {
-        cmd: cmd || null,
-        showLog: showLog || null,
-        toPath: process.cwd()
+        tableName: inTableName || tableName,
+        showLog: inShowLog || showLog,
+        toPath: inToPath || process.cwd()
     };
 };

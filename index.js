@@ -4,7 +4,7 @@ const load = async () => {
     const v = getLatestVersion();
 
     return (await import(
-        `./bin/${v}/commands/tableComp.js`
+        `./bin/${v}/start.js`
     )).default;
 };
 

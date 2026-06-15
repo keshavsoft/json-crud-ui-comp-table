@@ -1,6 +1,6 @@
 {
   "name": "json-crud-ui-comp-table",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "ui boilerplate code in public folder, with html and js for table build",
   "keywords": [
     "cli",
