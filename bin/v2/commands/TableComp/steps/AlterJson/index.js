@@ -32,28 +32,6 @@ const getShowAllConfigPath = ({ inDestination }) => {
     );
 };
 
-const updateColumnsConfig1 = ({ configRoot, columnsConfig }) => {
-    const folders = fs.readdirSync(configRoot, { withFileTypes: true });
-
-    for (const folder of folders) {
-        if (!folder.isDirectory()) continue;
-
-        const configPath = path.join(
-            configRoot,
-            folder.name,
-            "config.json"
-        );
-
-        if (!fs.existsSync(configPath)) continue;
-
-        const config = readJson(configPath);
-
-        config.columnsConfig = columnsConfig;
-
-        writeJson(configPath, config);
-    };
-};
-
 const startFunc = ({ inDestination, inToPath, tableName, fromConfigPath, showLog = false }) => {
     const columnsConfig = getSchemaConfig({ fromConfigPath, tableName, showLog });
 
