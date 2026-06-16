@@ -8,4 +8,9 @@ const load = async () => {
     )).default;
 };
 
-export default load;
+const showAll = async (...a) =>
+    (await load())(...a);
+
+export {
+    load, showAll
+};
