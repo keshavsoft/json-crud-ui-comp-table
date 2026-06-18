@@ -8,6 +8,10 @@ import pkg from '../../package.json' with { type: 'json' };
 const version = pkg.version;
 
 const run = async ({ tableName, showLog, toPath, configPath }) => {
+  if (!configPath) {
+    console.log("configPath not supplied ");
+  };
+
   const input = parseInput({
     inTableName: tableName,
     inShowLog: showLog, inToPath: toPath,
