@@ -11,6 +11,9 @@ const load = async (type) => {
 const showAll = async (...a) =>
     (await load("tableComp"))(...a);
 
+const simple = async (...a) =>
+    (await load("simple"))(...a);
+
 export {
-    load, showAll
+    load, showAll, simple
 };
