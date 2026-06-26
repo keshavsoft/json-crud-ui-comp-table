@@ -3,7 +3,7 @@ import showUsage from './core/showUsage.js';
 
 import resolveCommand from './core/resolveCommand.js';
 
-import tableComp from "./commands/tableComp.js";
+// import tableComp from "./commands/tableComp.js";
 
 import pkg from '../../package.json' with { type: 'json' };
 
@@ -22,7 +22,9 @@ const run = async ({ type, tableName, showLog, toPath, configPath }) => {
 
   if (input.action === "--help" || input.action === "-h" || input.action === "help") return showUsage(version);
 
-  await tableComp({
+  const commandToRun = resolveCommand(type);
+
+  await commandToRun({
     tableName: input.tableName,
     showLog: input.showLog,
     toPath: input.toPath,
