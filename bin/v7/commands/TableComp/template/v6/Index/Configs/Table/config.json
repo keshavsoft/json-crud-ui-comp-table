@@ -1,0 +1,93 @@
+{
+    "containerId": "kSTableContainer",
+    "tableName": "",
+    "mode": "create",
+    "layout": {
+        "verticalPosition": "top",
+        "type": "table"
+    },
+    "endPoints": {
+        "create": "/Api/v1/BillsTable/insertGenPk",
+        "update": "",
+        "delete": "/Api/v1/BillsTable/del",
+        "read": "/Api/v1/BillsTable/ShowAll",
+        "find": "",
+        "filter": "",
+        "dataLists": {},
+        "dataListEndpoints": {
+            "LedgerName": "/Api/v1/LedgerNames/ShowAll"
+        }
+    },
+    "options": {
+        "enabledSections": [
+            "vertical",
+            "table",
+            "footer"
+        ],
+        "table": {
+            "showFooterRows": true,
+            "showDataList": true,
+            "showSave": true,
+            "showActions": true,
+            "showSerial": true,
+            "showFooter": true
+        }
+    },
+    "callbacks": {
+        "table": {
+            "onDelete1": "function",
+            "onReadFail": "function"
+        }
+    },
+    "columnsConfig": [
+        {
+            "columnName": "LedgerName",
+            "title": "LedgerName",
+            "cellConfig": {
+                "width": "400px",
+                "tdClass": "px-4 py-2 border"
+            },
+            "dataListSource": "LedgerName.LedgerName",
+            "tableFooterDataListShow": true,
+            "uiClasses": {
+                "form": {
+                    "rowClass": "flex items-center space-x-4"
+                }
+            },
+            "allowOnChange": true,
+            "onChangeType": "onDataListChange"
+        },
+        {
+            "columnName": "InvoiceDate",
+            "title": "InvoiceDate",
+            "cellConfig": {
+                "width": "150px"
+            },
+            "uiClasses": {
+                "form": {
+                    "rowClass": "flex items-center space-x-4 w-1/2",
+                    "labelClass": "w-36 text-sm font-medium"
+                }
+            },
+            "isDate": true,
+            "defaultToday": true,
+            "isReadonly": false,
+            "autoFocus": false,
+            "isSearch": false,
+            "type": "date"
+        },
+        {
+            "columnName": "PartyGSTIN",
+            "title": "PartyGSTIN",
+            "dataListFillName": "PartyGSTIN",
+            "cellConfig": {
+                "width": "200px"
+            },
+            "uiClasses": {
+                "form": {
+                    "rowClass": "flex items-center space-x-4 w-1/2"
+                }
+            }
+        }
+    ]
+}
