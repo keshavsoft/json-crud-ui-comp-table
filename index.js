@@ -1,15 +1,15 @@
 import getLatestVersion from "./bin/core/getLatestVersion.js";
 
-const load = async () => {
+const load = async (type) => {
     const v = getLatestVersion();
 
     return (await import(
-        `./bin/${v}/start.js`
+        `./bin/${v}/commands/${type}.js`
     )).default;
 };
 
 const showAll = async (...a) =>
-    (await load())(...a);
+    (await load("tableComp"))(...a);
 
 export {
     load, showAll
